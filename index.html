@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sarah's Bakery</title>
+    <meta name="description"
+        content="Sarah's Bakery — freshly baked cakes and desserts in Bangladesh. Live prices, real stock, instant orders and order tracking." />
+    <meta name="theme-color" content="#8A4B3B" />
+    <meta property="og:title" content="Sarah's Bakery" />
+    <meta property="og:description" content="Freshly baked cakes &amp; desserts, made to order — live prices, real stock, instant orders." />
+    <meta property="og:type" content="website" />
+    <base target="_top" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Manrope:wght@300;400;500;600;700;800&family=Cinzel:wght@500;600;700&family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700&family=Hind+Siliguri:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/346/346167.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+
+<body>
+
+    <div id="aura">
+        <div class="aura-blob aura-1"></div>
+        <div class="aura-blob aura-2"></div>
+        <div class="aura-blob aura-3"></div>
+    </div>
+
+    <div id="scroll-bar"></div>
+
+    <nav id="navbar">
+        <div class="nav-main">
+            <div class="nav-logo" id="site-logo" role="button" tabindex="0" onclick="scrollToShop()"
+                onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();scrollToShop();}">SARAH's Bakery</div>
+            <div class="search-wrap" id="search-wrap">
+                <div class="search-input-box">
+                    <input type="search" id="search-inp" aria-label="Search products and brands"
+                        placeholder="Search cakes, flavors…" oninput="onSearch()" />
+                    <i class="fa fa-magnifying-glass"></i>
+                </div>
+                <button class="clear-filter-btn" id="clear-filter-btn" onclick="clearFilter()"><i
+                        class="fa fa-xmark"></i>Clear Filter</button>
+            </div>
+            <div class="nav-actions">
+                <a href="about.html" class="nav-page-link">About</a>
+                <a href="gallery.html" class="nav-page-link">Gallery</a>
+                <a href="faq.html" class="nav-page-link">FAQ</a>
+                <a href="contact.html" class="nav-page-link">Contact</a>
+                <button class="nav-track-btn" onclick="openTrack()"><i class="fa-solid fa-truck-fast"></i><span>Track
+                        Order</span></button>
+                <button class="nav-icon-btn" id="cart-btn" onclick="toggleCart()" title="Cart" aria-label="Open cart">
+                    <i class="fa fa-bag-shopping"></i>
+                    <span class="cart-count hidden" id="cart-cnt">0</span>
+                </button>
+                <a href="https://wa.me/qr/K32S62PEL6ZAK1" id="wa-btn" target="_blank" rel="noopener" class="nav-icon-btn"
+                    title="WhatsApp" aria-label="Chat on WhatsApp" style="color:#22C55E">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+        <div class="nav-cats" id="cat-pills"></div>
+    </nav>
+
+    <nav id="mobile-bottom-nav">
+        <button class="mbn-item" id="mbn-brand" onclick="openBrandPanel()"><i
+                class="fa fa-store"></i><span>Brand</span></button>
+        <button class="mbn-item" id="mbn-cat" onclick="openCategoryPanel()"><i
+                class="fa fa-grip"></i><span>Categories</span></button>
+        <button class="mbn-item" id="mbn-cart" onclick="toggleCart()"><i
+                class="fa fa-bag-shopping"></i><span>Cart</span><span class="mbn-badge hidden"
+                id="mbn-cart-cnt">0</span></button>
+        <button class="mbn-item" id="mbn-track" onclick="openTrack()"><i class="fa-solid fa-truck-fast"></i><span>Track
+                Order</span></button>
+        <a class="mbn-item" id="mbn-chat" href="https://wa.me/qr/K32S62PEL6ZAK1" target="_blank" rel="noopener"><i
+                class="fa-brands fa-whatsapp"></i><span>Chat</span></a>
+    </nav>
+
+    <div id="sp-veil" onclick="closeSidePanel()"></div>
+    <aside id="side-panel" aria-label="Filters">
+        <div class="sp-head">
+            <h3 id="sp-title">Brands</h3><button class="icon-btn" aria-label="Close panel"
+                onclick="closeSidePanel()"><i class="fa fa-xmark"></i></button>
+        </div>
+        <div class="sp-body" id="sp-body"></div>
+    </aside>
+
+    <section id="hero">
+        <div class="hero-petal hero-petal-1"></div>
+        <div class="hero-petal hero-petal-2"></div>
+        <div class="hero-petal hero-petal-3"></div>
+        <div id="sparks"></div>
+        <div class="hero-inner">
+            <div class="hero-copy">
+                <div class="hero-eyebrow"><i class="fa fa-heart"></i> Baked Fresh, Every Morning</div>
+                <h1 class="hero-title">Every Cake Tells<br /><em>Your Story</em></h1>
+                <p class="hero-sub">Handcrafted cakes and desserts, baked to order in small batches with real butter, real cream, and no shortcuts — for birthdays, weddings, and the days worth celebrating.
+                </p>
+                <div class="hero-btn-row">
+                    <a href="#shop" class="hero-btn"><i class="fa fa-cake-candles"></i> <span>Explore the Collection</span></a>
+                    <a href="tel:+8801521124546" class="hero-btn-ghost"><i class="fa-solid fa-phone"></i> <span>Call to Order</span></a>
+                </div>
+            </div>
+            <div class="hero-stats hero-stats--slider">
+                <div class="hero-slider-track">
+                    <img class="hero-slide-img" src="https://foodieflavours.com/cdn/shop/articles/Red-velvet-cake-feature_c4901f20-7fc2-4caf-9cba-dcd8c4c05b62.webp?crop=center&height=1200&v=1748967249&width=1200" alt="Red velvet cake" loading="lazy" />
+                    <img class="hero-slide-img" src="https://www.rainbownourishments.com/wp-content/uploads/2023/05/vegan-red-velvet-cake-1-500x500.jpg" alt="Vegan red velvet cake" loading="lazy" />
+                    <img class="hero-slide-img" src="https://alpineella.com/wp-content/uploads/2025/03/featured-image-mini-carrot-cake.jpg" alt="Mini carrot cake" loading="lazy" />
+                    <img class="hero-slide-img" src="https://scientificallysweet.com/wp-content/uploads/2024/08/IMG_4344-feature.jpg" alt="Cake slice" loading="lazy" />
+                    <img class="hero-slide-img" src="https://lubov.in/cdn/shop/files/BelgiumChocolateTruffleCake.png?v=1749649320&width=1946" alt="Belgium chocolate truffle cake" loading="lazy" />
+                    <img class="hero-slide-img" src="https://i.pinimg.com/1200x/2e/10/36/2e10369e2ba9e0e99f14a9c0a7c18c5b.jpg" alt="Chocolate cake" loading="lazy" />
+                    <img class="hero-slide-img" src="https://images.immediate.co.uk/production/volatile/sites/2/2024/07/CHOCOLATECAKE410HEROL1-d3d8cf8.gif?quality=90&resize=708,643" alt="Chocolate cake" loading="lazy" />
+                    <img class="hero-slide-img" src="https://i.pinimg.com/1200x/c2/c5/98/c2c598a3ef9185e1a6596135d5fe54b0.jpg" alt="Decorated chocolate cake" loading="lazy" />
+                    <img class="hero-slide-img" src="https://butternutbakeryblog.com/wp-content/uploads/2021/05/new-york-style-cheesecake-square.jpg" alt="New York style cheesecake" loading="lazy" />
+                    <img class="hero-slide-img" src="https://res.cloudinary.com/hksqkdlah/image/upload/c_fill,dpr_2.0,f_auto,fl_lossy.progressive.strip_profile,g_faces:auto,h_599,q_auto:low/22870_sfs-foolproof-new-york-style-cheesecake-14" alt="New York style cheesecake" loading="lazy" />
+                    <img class="hero-slide-img" src="https://www.tasteofhome.com/wp-content/uploads/2025/03/Contest-Winning-Blueberry-Swirl-Cheesecake_EXPS_TOHWinter26_23020_MD_P2_02_25_3b.jpg" alt="Blueberry swirl cheesecake" loading="lazy" />
+                    <img class="hero-slide-img" src="https://www.spatuladesserts.com/wp-content/uploads/2024/11/Basque-burnt-cheesecake-06409-3.jpg" alt="Basque burnt cheesecake" loading="lazy" />
+                    <img class="hero-slide-img" src="https://www.allrecipes.com/thmb/TLA7V2KrtbkpZh1cmhffohP8_SE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/270713_BurntBasqueCheesecake_ddmfs_3x4_2411-a6030d5e7c2f4b37bc8569b9cd2b634b-0d39c7588c854340bb20e557d500024a.jpg" alt="Burnt Basque cheesecake" loading="lazy" />
+                    <img class="hero-slide-img" src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/e53285de3ba640d4b6fc84761fd00717/BFV21217_MatchaStripedCheesecake.jpg?output-format=auto&output-quality=auto&resize=600" alt="Matcha striped cheesecake" loading="lazy" />
+                    <img class="hero-slide-img" src="https://www.texanerin.com/content/uploads/2022/01/gluten-free-chocolate-cake-image-1200.jpg" alt="Gluten-free chocolate cake" loading="lazy" />
+                    <img class="hero-slide-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5t0Re3IVQGpF1T63hzLS5R27GU5ouEH9dVCt6HZUZPQ6DUS4Ae0d2rIw&s=10" alt="Chocolate cake" loading="lazy" />
+                    <img class="hero-slide-img" src="https://www.abakingjourney.com/wp-content/uploads/2020/07/Marble-Loaf-Cake-Feature.jpg" alt="Marble loaf cake" loading="lazy" />
+                    <img class="hero-slide-img" src="https://www.theseasonedmom.com/wp-content/uploads/2024/04/banana-nut-bread-9.jpg" alt="Banana nut bread" loading="lazy" />
+                    <img class="hero-slide-img" src="https://bellyrumbles.com/wp-content/uploads/2023/12/christmas-fruit-cake-recipe-for-special-diets.jpg" alt="Christmas fruit cake" loading="lazy" />
+                    <img class="hero-slide-img" src="https://www.rachelcooks.com/wp-content/uploads/2023/05/Vanilla-Buttercream-Frosting031-web-square.jpg" alt="Vanilla buttercream cake" loading="lazy" />
+                    <img class="hero-slide-img" src="https://www.yellowblissroad.com/wp-content/uploads/2018/02/Vanilla-Cupcakes-with-Vanilla-Buttercream-Frosting-fb.jpg" alt="Vanilla cupcakes with buttercream" loading="lazy" />
+                    <img class="hero-slide-img" src="https://www.barleyandsage.com/wp-content/uploads/2022/02/chocolate-fudge-cupcakes-1200x1200-1.jpg" alt="Chocolate fudge cupcakes" loading="lazy" />
+                    <img class="hero-slide-img" src="https://www.savorynothings.com/wp-content/uploads/2021/02/Red-Velvet-Cupcakes-Recipe-Image-SQ.jpg" alt="Red velvet cupcakes" loading="lazy" />
+                    <img class="hero-slide-img" src="https://thestayathomechef.com/wp-content/uploads/2025/07/Funfetti-Birthday-Cupcakes-Square.png" alt="Funfetti birthday cupcakes" loading="lazy" />
+                    <img class="hero-slide-img" src="https://lovefoodies.com/wp-content/uploads/2016/03/Strawberry-Shortcake-CakeF-720x720.jpg" alt="Strawberry shortcake cake" loading="lazy" />
+                    <img class="hero-slide-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq4q_ew1Ser6Atp86vdMyP1cgUVO7ktiJBdQytIoSOb9twE-06BJwu2ywI&s=10" alt="Strawberry cake" loading="lazy" />
+                    <img class="hero-slide-img" src="https://www.connoisseurusveg.com/wp-content/uploads/2022/04/vegan-vanilla-cake-sq-1.jpg" alt="Vegan vanilla cake" loading="lazy" />
+                    <img class="hero-slide-img" src="https://cdnimg.webstaurantstore.com/images/products/large/776469/2641702.jpg" alt="Decorated cake" loading="lazy" />
+                    <img class="hero-slide-img" src="https://cdn.sprinklebakes.com/media/2021/01/Opera2BCake2B3-1-500x500.jpg" alt="Opera cake" loading="lazy" />
+                    <img class="hero-slide-img" src="https://tierandcrumb.com/images/mango-passion-mousse-cake-hero.jpg" alt="Mango passion mousse cake" loading="lazy" />
+                    <img class="hero-slide-img" src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_1024,h_836/https://currygirlskitchen.com/wp-content/uploads/2021/03/3EA6A9E2-EC7E-4F69-AC8B-E72B3E09EAC5-1024x836.jpg" alt="Mango cake" loading="lazy" />
+                    <img class="hero-slide-img" src="https://kitchenmason.com/wp-content/uploads/2022/05/Biscoff-Cake-Recipe-SQUARE.jpg" alt="Biscoff cake" loading="lazy" />
+                    <img class="hero-slide-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRagXUct_6dJO0arvnjyjTehkTKyEm6dkOGtlM9gFIh1Y9TfFKW1Doj0Q&s=10" alt="Biscoff cake" loading="lazy" />
+                    <img class="hero-slide-img" src="https://magnolia.com/cdn/shop/articles/article_almond-butter-cake_3e531362-ecda-4e96-84bb-93dc87b37f11.jpg?v=1750266511&width=1100" alt="Almond butter cake" loading="lazy" />
+                    <img class="hero-slide-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfwr0YCJfgvg6m11bpRnOk8CRaDf4Qz0YFLovqz5DqyERBNyUCKzMBJqKe&s=10" alt="Almond cake" loading="lazy" />
+                    <img class="hero-slide-img" src="https://foodieflavours.com/cdn/shop/articles/Red-velvet-cake-feature_c4901f20-7fc2-4caf-9cba-dcd8c4c05b62.webp?crop=center&height=1200&v=1748967249&width=1200" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://www.rainbownourishments.com/wp-content/uploads/2023/05/vegan-red-velvet-cake-1-500x500.jpg" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://alpineella.com/wp-content/uploads/2025/03/featured-image-mini-carrot-cake.jpg" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://scientificallysweet.com/wp-content/uploads/2024/08/IMG_4344-feature.jpg" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://lubov.in/cdn/shop/files/BelgiumChocolateTruffleCake.png?v=1749649320&width=1946" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://i.pinimg.com/1200x/2e/10/36/2e10369e2ba9e0e99f14a9c0a7c18c5b.jpg" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://images.immediate.co.uk/production/volatile/sites/2/2024/07/CHOCOLATECAKE410HEROL1-d3d8cf8.gif?quality=90&resize=708,643" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://i.pinimg.com/1200x/c2/c5/98/c2c598a3ef9185e1a6596135d5fe54b0.jpg" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://butternutbakeryblog.com/wp-content/uploads/2021/05/new-york-style-cheesecake-square.jpg" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://res.cloudinary.com/hksqkdlah/image/upload/c_fill,dpr_2.0,f_auto,fl_lossy.progressive.strip_profile,g_faces:auto,h_599,q_auto:low/22870_sfs-foolproof-new-york-style-cheesecake-14" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://www.tasteofhome.com/wp-content/uploads/2025/03/Contest-Winning-Blueberry-Swirl-Cheesecake_EXPS_TOHWinter26_23020_MD_P2_02_25_3b.jpg" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://www.spatuladesserts.com/wp-content/uploads/2024/11/Basque-burnt-cheesecake-06409-3.jpg" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://www.allrecipes.com/thmb/TLA7V2KrtbkpZh1cmhffohP8_SE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/270713_BurntBasqueCheesecake_ddmfs_3x4_2411-a6030d5e7c2f4b37bc8569b9cd2b634b-0d39c7588c854340bb20e557d500024a.jpg" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://img.buzzfeed.com/thumbnailer-prod-us-east-1/e53285de3ba640d4b6fc84761fd00717/BFV21217_MatchaStripedCheesecake.jpg?output-format=auto&output-quality=auto&resize=600" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://www.texanerin.com/content/uploads/2022/01/gluten-free-chocolate-cake-image-1200.jpg" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5t0Re3IVQGpF1T63hzLS5R27GU5ouEH9dVCt6HZUZPQ6DUS4Ae0d2rIw&s=10" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://www.abakingjourney.com/wp-content/uploads/2020/07/Marble-Loaf-Cake-Feature.jpg" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://www.theseasonedmom.com/wp-content/uploads/2024/04/banana-nut-bread-9.jpg" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://bellyrumbles.com/wp-content/uploads/2023/12/christmas-fruit-cake-recipe-for-special-diets.jpg" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://www.rachelcooks.com/wp-content/uploads/2023/05/Vanilla-Buttercream-Frosting031-web-square.jpg" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://www.yellowblissroad.com/wp-content/uploads/2018/02/Vanilla-Cupcakes-with-Vanilla-Buttercream-Frosting-fb.jpg" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://www.barleyandsage.com/wp-content/uploads/2022/02/chocolate-fudge-cupcakes-1200x1200-1.jpg" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://www.savorynothings.com/wp-content/uploads/2021/02/Red-Velvet-Cupcakes-Recipe-Image-SQ.jpg" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://thestayathomechef.com/wp-content/uploads/2025/07/Funfetti-Birthday-Cupcakes-Square.png" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://lovefoodies.com/wp-content/uploads/2016/03/Strawberry-Shortcake-CakeF-720x720.jpg" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq4q_ew1Ser6Atp86vdMyP1cgUVO7ktiJBdQytIoSOb9twE-06BJwu2ywI&s=10" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://www.connoisseurusveg.com/wp-content/uploads/2022/04/vegan-vanilla-cake-sq-1.jpg" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://cdnimg.webstaurantstore.com/images/products/large/776469/2641702.jpg" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://cdn.sprinklebakes.com/media/2021/01/Opera2BCake2B3-1-500x500.jpg" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://tierandcrumb.com/images/mango-passion-mousse-cake-hero.jpg" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_1024,h_836/https://currygirlskitchen.com/wp-content/uploads/2021/03/3EA6A9E2-EC7E-4F69-AC8B-E72B3E09EAC5-1024x836.jpg" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://kitchenmason.com/wp-content/uploads/2022/05/Biscoff-Cake-Recipe-SQUARE.jpg" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRagXUct_6dJO0arvnjyjTehkTKyEm6dkOGtlM9gFIh1Y9TfFKW1Doj0Q&s=10" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://magnolia.com/cdn/shop/articles/article_almond-butter-cake_3e531362-ecda-4e96-84bb-93dc87b37f11.jpg?v=1750266511&width=1100" alt="" aria-hidden="true" loading="lazy" />
+                    <img class="hero-slide-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfwr0YCJfgvg6m11bpRnOk8CRaDf4Qz0YFLovqz5DqyERBNyUCKzMBJqKe&s=10" alt="" aria-hidden="true" loading="lazy" />
+                </div>
+            </div>
+
+            <div class="price-note" lang="bn">
+                কেকের মূল্য সাইজ, ফ্লেভার ও ডিজাইনের ওপর নির্ভর করে পরিবর্তিত হতে পারে। আপনার পছন্দের কেকের সর্বশেষ মূল্য এবং কাস্টম ডিজাইন এর জন্য অনুগ্রহ করে আমাদের সাথে সরাসরি নিচের নম্বরে যোগাযোগ করুন।
+                <div class="contact-number">
+                    <i class="fa-solid fa-phone" style="color: #f3e3da;"></i> <a href="tel:+880 1521-124546">+880 1521-124546</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="page" id="shop">
+        <div class="section-head reveal">
+            <h2 class="section-title">Our <span>Collection</span></h2>
+            <span class="section-count" id="prod-count"></span>
+        </div>
+        <div id="loading-state" class="loading-box">
+            <div class="spin"></div>
+            <p style="color:var(--slate);font-size:14px;letter-spacing:.4px">Loading live products…</p>
+        </div>
+        <div id="error-state" class="loading-box hidden">
+            <div class="state-icon">⚠️</div>
+            <p class="state-title">Could not load products</p>
+            <p class="state-sub" id="err-msg">Please check the Apps Script URL.</p><button class="btn-retry"
+                onclick="loadData()">Retry</button>
+        </div>
+        <div id="empty-state" class="loading-box hidden">
+            <div class="state-icon">🔍</div>
+            <p class="state-title">No products found</p>
+            <p class="state-sub">Try a different search or category.</p>
+        </div>
+        <div id="product-grid" class="hidden"></div>
+    </div>
+
+    <div id="cart-veil" onclick="closeCart()"></div>
+    <aside id="cart" aria-label="Shopping bag">
+        <div class="cart-head">
+            <h3>Shopping Bag</h3><button class="icon-btn" aria-label="Close cart" onclick="closeCart()"><i
+                    class="fa fa-xmark"></i></button>
+        </div>
+        <div class="cart-body" id="cart-body"></div>
+        <div class="cart-foot" id="cart-foot" style="display:none">
+            <div class="cart-line"><span>Subtotal</span><span id="cf-sub">৳0</span></div>
+            <div class="cart-line"><span>Delivery</span><span id="cf-del">Calculated at checkout</span></div>
+            <div class="cart-line big"><span>Total</span><span id="cf-tot">৳0</span></div>
+            <button class="btn-checkout" onclick="openCheckout()"><i class="fa fa-lock"></i> Secure Checkout</button>
+        </div>
+    </aside>
+
+    <div id="modal-veil" onclick="onModalVeilClick(event)">
+        <div id="modal" role="dialog" aria-modal="true" aria-labelledby="m-name">
+            <div class="modal-img"><img id="m-img" src="" alt="" /><button class="modal-x" aria-label="Close"
+                    onclick="closeModal()"><i class="fa fa-xmark"></i></button></div>
+            <div class="modal-info">
+                <p class="modal-brand" id="m-brand"></p>
+                <h2 class="modal-name" id="m-name"></h2>
+                <p class="modal-sku" id="m-sku"></p>
+                <p class="modal-desc" id="m-desc"></p>
+                <div class="modal-price-row">
+                    <span class="modal-price" id="m-price"></span>
+                    <span class="modal-price-old" id="m-old"></span>
+                    <span class="modal-disc hidden" id="m-disc"></span>
+                </div>
+                <p class="modal-stock" id="m-stock"></p>
+                <div class="qty-row">
+                    <div class="qty-ctrl"><button aria-label="Decrease quantity"
+                            onclick="mQty(-1)">−</button><span id="m-qty">1</span><button aria-label="Increase quantity"
+                            onclick="mQty(1)">+</button></div>
+                    <button class="btn-add-modal" id="m-add" onclick="addFromModal()"><i class="fa fa-bag-shopping"></i>
+                        Add to Bag</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="checkout-veil" onclick="onCoVeilClick(event)">
+        <div id="checkout-box" role="dialog" aria-modal="true" aria-label="Checkout">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+                <h2 class="co-title">Checkout</h2>
+                <button class="icon-btn" aria-label="Close checkout" onclick="closeCheckout()"><i
+                        class="fa fa-xmark"></i></button>
+            </div>
+            <p class="co-sub">Complete your order below</p>
+            <div class="order-mini">
+                <div class="osm-line"><span>Subtotal</span><span id="co-sub">৳0</span></div>
+                <div class="osm-line"><span id="co-del-lbl">Delivery</span><span id="co-del">৳0</span></div>
+                <div class="osm-line big"><span>Total</span><span id="co-tot">৳0</span></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label for="co-fn">First Name *</label><input type="text" id="co-fn"
+                        autocomplete="given-name" placeholder="Nargis" />
+                </div>
+                <div class="form-group"><label for="co-ln">Last Name *</label><input type="text" id="co-ln"
+                        autocomplete="family-name" placeholder="Akter" />
+                </div>
+            </div>
+            <div class="form-group"><label for="co-phone">Contact Number *</label><input type="tel" id="co-phone"
+                    inputmode="tel" autocomplete="tel" placeholder="01XXXXXXXXX" /></div>
+            <div class="form-group"><label for="co-addr">Delivery Address *</label><textarea id="co-addr" rows="2"
+                    autocomplete="street-address" placeholder="House No, Road, Area, City…"
+                    style="resize:none"></textarea></div>
+            <div class="form-group">
+                <label for="co-loc">Delivery Location *</label>
+                <select id="co-loc" onchange="onLocChange()">
+                    <option value="">— Select —</option>
+                    <option value="inside">Inside Dhaka (Ashkona / Uttara area)</option>
+                    <option value="outside">Outside Dhaka</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="co-pay">Payment Method *</label>
+                <select id="co-pay" onchange="onPayChange()">
+                    <option value="">— Select —</option>
+                    <option value="Cash On Delivery">Cash On Delivery</option>
+                    <option value="bKash">bKash</option>
+                    <option value="Nagad">Nagad</option>
+                </select>
+            </div>
+            <div class="pay-info hidden" id="pay-info">
+                <strong id="pi-title">bKash Payment</strong>
+                Send to: <strong id="pi-num">01XXXXXXXXX</strong><br />
+                Then fill your account number and transaction ID below.
+            </div>
+            <div id="txn-wrap" class="hidden">
+                <div class="form-group"><label for="co-acc">Your Mobile Account No. *</label><input type="text"
+                        id="co-acc" inputmode="tel" placeholder="01XXXXXXXXX" /></div>
+                <div class="form-group"><label for="co-txn">Transaction ID *</label><input type="text" id="co-txn"
+                        placeholder="TXN123456" /></div>
+            </div>
+            <p class="form-err" id="co-err" role="alert"></p>
+            <button class="btn-place" id="btn-place" onclick="placeOrder()"><i class="fa fa-check-circle"></i> Place
+                Order</button>
+        </div>
+    </div>
+
+    <div id="success-veil">
+        <div id="success-box" role="dialog" aria-modal="true" aria-label="Order placed">
+            <div class="success-icon"><i class="fa fa-check"></i></div>
+            <h2 class="success-title">Order Placed!</h2>
+            <p class="success-sub">Your order has been received. Save your tracking code to check delivery status
+                anytime.</p>
+            <p class="success-note hidden" id="succ-note"></p>
+            <div class="order-id-box">
+                <div class="order-id-lbl">Order ID</div>
+                <div class="order-id-val" id="succ-order-id"></div>
+            </div>
+            <div class="tracking-box">
+                <div class="tracking-lbl">Your Tracking Code</div>
+                <div class="tracking-val" id="succ-tracking"></div>
+                <div class="tracking-hint">Use this code to track your shipment</div>
+            </div>
+            <button class="btn-track-order" onclick="openTrackFromSuccess()"><i class="fa fa-location-dot"></i> Track My
+                Order</button>
+            <button class="btn-invoice" onclick="openInvoiceFromSuccess()"><i class="fa fa-file-invoice"></i> View
+                Invoice</button>
+            <button class="btn-done" onclick="closeSuccess()"><i class="fa fa-check"></i> Done</button>
+        </div>
+    </div>
+
+    <div id="track-veil" onclick="onTrackVeilClick(event)">
+        <div id="track-box" role="dialog" aria-modal="true" aria-label="Track your order">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
+                <h2 class="track-title">Track Your Order <i class="fa-solid fa-truck-fast"
+                        style="color: var(--rose);"></i></h2>
+                <button class="icon-btn" aria-label="Close" onclick="closeTrack()"><i class="fa fa-xmark"></i></button>
+            </div>
+            <p class="track-sub">Enter your Order ID (e.g. #ORD-...) or Tracking Code (e.g. SRB-...)</p>
+            <div class="track-input-row">
+                <input type="text" id="track-inp" aria-label="Order ID or tracking code"
+                    placeholder="SRB-260319-1234 or #ORD-..." onkeydown="if(event.key==='Enter')doTrack()" />
+                <button class="btn-search" id="btn-search" onclick="doTrack()"><i class="fa fa-magnifying-glass"></i>
+                    Search</button>
+            </div>
+            <p class="track-err" id="track-err" role="alert"></p>
+            <div class="track-result" id="track-result">
+                <div class="status-bar">
+                    <div class="sl">Current Status</div>
+                    <div class="status-chip" id="tr-status-chip"></div>
+                </div>
+                <div class="steps" id="tr-steps">
+                    <div class="step" id="step-processing">
+                        <div class="step-dot"><i class="fa fa-clock"></i></div>
+                        <div class="step-lbl">Processing</div>
+                    </div>
+                    <div class="step" id="step-confirmed">
+                        <div class="step-dot"><i class="fa fa-check"></i></div>
+                        <div class="step-lbl">Confirmed</div>
+                    </div>
+                    <div class="step" id="step-packed">
+                        <div class="step-dot"><i class="fa fa-box"></i></div>
+                        <div class="step-lbl">Packed</div>
+                    </div>
+                    <div class="step" id="step-shipped">
+                        <div class="step-dot"><i class="fa fa-truck"></i></div>
+                        <div class="step-lbl">Shipped</div>
+                    </div>
+                    <div class="step" id="step-outfordelivery">
+                        <div class="step-dot"><i class="fa fa-motorcycle"></i></div>
+                        <div class="step-lbl">Out for Delivery</div>
+                    </div>
+                    <div class="step" id="step-delivered">
+                        <div class="step-dot"><i class="fa fa-house"></i></div>
+                        <div class="step-lbl">Delivered</div>
+                    </div>
+                </div>
+                <div class="tr-grid">
+                    <div class="tr-box">
+                        <div class="tbl">Order Info</div>
+                        <p id="tr-order-info"></p>
+                    </div>
+                    <div class="tr-box">
+                        <div class="tbl">Delivery Info</div>
+                        <p id="tr-delivery-info"></p>
+                    </div>
+                </div>
+                <div class="tr-items">
+                    <div class="tbl">Items Ordered</div>
+                    <div id="tr-items-list"></div>
+                </div>
+                <div class="tr-totals">
+                    <div class="line"><span>Subtotal</span><span id="tr-sub"></span></div>
+                    <div class="line"><span>Delivery</span><span id="tr-del"></span></div>
+                    <div class="grand"><span>Total</span><span id="tr-tot"></span></div>
+                </div>
+            </div>
+            <button class="btn-close-track" onclick="closeTrack()">Close</button>
+        </div>
+    </div>
+
+    <div id="inv-veil">
+        <div id="inv-box" role="dialog" aria-modal="true" aria-label="Invoice">
+            <div id="inv-content">
+                <div class="inv-hdr">
+                    <div class="inv-logo">✿ Sarah's Bakery ✿</div>
+                    <div class="inv-tagline">Every Cake Tells Your Story</div>
+                    <div class="inv-badge">INVOICE</div>
+                </div>
+                <div class="inv-grid">
+                    <div class="inv-box">
+                        <h4>Order Details</h4>
+                        <p id="inv-order"></p>
+                    </div>
+                    <div class="inv-box">
+                        <h4>Customer</h4>
+                        <p id="inv-cust"></p>
+                    </div>
+                </div>
+                <table id="inv-table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th style="text-align:center">Qty</th>
+                            <th style="text-align:right">Price</th>
+                            <th style="text-align:right">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inv-rows"></tbody>
+                </table>
+                <div class="inv-totals">
+                    <div class="inv-line"><span>Subtotal</span><span id="inv-sub"></span></div>
+                    <div class="inv-line"><span>Delivery</span><span id="inv-del"></span></div>
+                    <div class="inv-grand"><span>Grand Total</span><span id="inv-tot"></span></div>
+                </div>
+                <p class="inv-thanks">🌸 Thank you for shopping with Sarah's BAKERY!</p>
+                <div class="inv-footer"><strong style="color:var(--rose-d)">Sarah's BAKERY</strong>
+                    &nbsp;|&nbsp; sarahbakery@gmail.com &nbsp;|&nbsp; © 2026</div>
+            </div>
+            <div class="inv-actions">
+                <button class="btn-inv btn-inv-out" onclick="printInvoice()"><i class="fa fa-print"></i> Print</button>
+                <button class="btn-inv btn-inv-fill" onclick="closeInvoice()"><i class="fa fa-check"></i> Done</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" role="status" aria-live="polite"><i class="fa fa-check-circle" id="toast-ic"></i><span
+            id="toast-msg"></span></div>
+
+    <button id="to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top"
+        aria-label="Back to top"><i class="fa fa-arrow-up"></i></button>
+
+    <footer class="site-footer">
+        <div class="footer-glow"></div>
+        <div class="footer-main">
+            <div class="footer-grid">
+                <div class="reveal">
+                    <div class="footer-brand-name"> <span class="brand-logo-text">Sarah's</span> BAKERY</div>
+                    <p class="footer-about">Your trusted destination for delicious, homemade cakes in Bangladesh. We create fresh, high-quality cakes with love, perfect for birthdays, celebrations, and every special moment.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.facebook.com/people/Shalik-Beauty/61553616282600/" target="_blank"
+                            rel="noopener" aria-label="Facebook" class="footer-social-link"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/shalikbeauty007" target="_blank" rel="noopener"
+                            aria-label="Instagram" class="footer-social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/qr/K32S62PEL6ZAK1" target="_blank" rel="noopener" aria-label="WhatsApp"
+                            id="wa-footer" class="footer-social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <div class="footer-col-title">Quick Links</div>
+                    <ul class="footer-links">
+                        <li><a href="index.html#shop">All Products</a></li>
+                        <li><a href="#" onclick="openTrack(); return false;">Track Order</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="reveal">
+                    <div class="footer-col-title">Categories</div>
+                    <ul class="footer-links" id="footer-cats">
+                        <li><a href="index.html#shop">Birthday Cakes</a></li>
+                        <li><a href="index.html#shop">Cheesecakes</a></li>
+                        <li><a href="index.html#shop">Cupcakes</a></li>
+                        <li><a href="index.html#shop">Custom Cakes</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="reveal">
+                    <div class="footer-col-title">Contact</div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-location-dot"></i>
+                        <p>Dhaka, Bangladesh</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+880 1521-124546">+880 1521-124546</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:hello@sarabakery.com">hello@sarabakery.com</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-clock"></i>
+                        <p>Sat–Thu: 10AM – 10PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-copy">© 2026 <strong>Sarah's Bakery</strong> All rights reserved.</div>
+            <div class="footer-payments">
+                <div class="footer-pay-icon"><i class="fas fa-money-bill-wave"></i></div>
+                <div class="footer-pay-icon" style="font-size:11px;font-weight:800;color:#E2136E;">bKash</div>
+                <div class="footer-pay-icon" style="font-size:10px;font-weight:800;color:#F6921E;">Nagad</div>
+                <div class="footer-pay-icon" style="font-size:9px;font-weight:800;color:#8B2F89;">Rocket</div>
+            </div>
+        </div>
+    <div class="footer-credit">
+    <span>
+        Developed by
+        <a href="https://wa.me/8801764640824" target="_blank" rel="noopener noreferrer">
+            <strong>mhshan7</strong>
+        </a>
+    </span>
+</div>
+    </footer>
+
+    <script src="assets/site.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us — Sarah's Bakery</title>
+    <meta name="description" content="Meet Sarah's Bakery — small-batch cakes and desserts baked fresh in Dhaka, Bangladesh." />
+    <meta name="theme-color" content="#8A4B3B" />
+    <base target="_top" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Manrope:wght@300;400;500;600;700;800&family=Cinzel:wght@500;600;700&family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700&family=Hind+Siliguri:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/346/346167.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="assets/styles.css" />
+</head>
+
+<body>
+
+    <div id="aura">
+        <div class="aura-blob aura-1"></div>
+        <div class="aura-blob aura-2"></div>
+        <div class="aura-blob aura-3"></div>
+    </div>
+
+    <div id="scroll-bar"></div>
+
+    <nav id="navbar">
+        <div class="nav-main">
+            <a href="index.html" class="nav-logo" id="site-logo">SARAH's Bakery</a>
+            <div class="nav-actions" style="margin-left:auto">
+                <a href="index.html" class="nav-page-link">Home</a>
+                <a href="about.html" class="nav-page-link" style="color:var(--rose-d);background:var(--rose-s)">About</a>
+                <a href="gallery.html" class="nav-page-link">Gallery</a>
+                <a href="faq.html" class="nav-page-link">FAQ</a>
+                <a href="contact.html" class="nav-page-link">Contact</a>
+                <button class="nav-track-btn" onclick="openTrack()"><i class="fa-solid fa-truck-fast"></i><span>Track
+                        Order</span></button>
+                <button class="nav-icon-btn" id="cart-btn" onclick="toggleCart()" title="Cart" aria-label="Open cart">
+                    <i class="fa fa-bag-shopping"></i>
+                    <span class="cart-count hidden" id="cart-cnt">0</span>
+                </button>
+                <a href="https://wa.me/qr/K32S62PEL6ZAK1" id="wa-btn" target="_blank" rel="noopener" class="nav-icon-btn"
+                    title="WhatsApp" aria-label="Chat on WhatsApp" style="color:#22C55E">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <nav id="mobile-bottom-nav">
+        <a class="mbn-item" href="index.html"><i class="fa fa-house"></i><span>Home</span></a>
+        <button class="mbn-item" id="mbn-cart" onclick="toggleCart()"><i
+                class="fa fa-bag-shopping"></i><span>Cart</span><span class="mbn-badge hidden"
+                id="mbn-cart-cnt">0</span></button>
+        <button class="mbn-item" id="mbn-track" onclick="openTrack()"><i class="fa-solid fa-truck-fast"></i><span>Track</span></button>
+        <a class="mbn-item" id="mbn-chat" href="https://wa.me/qr/K32S62PEL6ZAK1" target="_blank" rel="noopener"><i
+                class="fa-brands fa-whatsapp"></i><span>Chat</span></a>
+    </nav>
+
+    <section class="page-hero">
+        <div class="page-hero-inner">
+            <div class="crumbs"><a href="index.html">Home</a> <i class="fa-solid fa-chevron-right" style="font-size:8px"></i> <span>About</span></div>
+            <div class="hero-eyebrow"><i class="fa fa-heart"></i> Our Story</div>
+            <h1>Baking Has Always Been<br /><em>Sarah's Love Language</em></h1>
+            <p>What started as birthday cakes for family in a small Dhaka kitchen has grown into a bakery trusted by hundreds of happy customers — without ever losing the handmade touch that started it all.</p>
+        </div>
+    </section>
+
+    <div class="static-section">
+        <div class="about-split reveal">
+            <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=900&auto=format" alt="Baker decorating a cake with buttercream" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=900&auto=format'" />
+            <div class="about-copy">
+                <div class="hero-eyebrow"><i class="fa fa-cake-candles"></i> Since 2019</div>
+                <h2>From a Home Kitchen to <em>Dhaka's Doorsteps</em></h2>
+                <p>Sarah's Bakery began the way most good bakeries do — with a home oven, a few trusted recipes, and orders from friends who kept asking for "just one more cake." Today we bake every order fresh, in small batches, using real butter, real cream, and no shortcuts.</p>
+                <p>We still test every new flavor in-house before it goes on the menu, and every custom cake is sketched, priced, and confirmed with you personally over WhatsApp before it's baked — because a cake for your celebration deserves that kind of care.</p>
+                <p>Every order is baked to order, packed with insulated boxes, and handed off with tracking so you always know exactly when your cake will arrive.</p>
+            </div>
+        </div>
+
+        <div class="static-lede reveal">
+            <h2>What We <span>Believe In</span></h2>
+            <p>Four simple principles guide every cake that leaves our kitchen.</p>
+        </div>
+        <div class="value-grid reveal">
+            <div class="value-card">
+                <div class="vi"><i class="fa-solid fa-wheat-awn"></i></div>
+                <h3>Real Ingredients</h3>
+                <p>Real butter, real cream, and fresh eggs — never shortening or artificial whipped topping.</p>
+            </div>
+            <div class="value-card">
+                <div class="vi"><i class="fa-solid fa-clock"></i></div>
+                <h3>Baked to Order</h3>
+                <p>Nothing sits in a freezer waiting for a buyer. Your cake is baked after you order it, not before.</p>
+            </div>
+            <div class="value-card">
+                <div class="vi"><i class="fa-solid fa-comments"></i></div>
+                <h3>Personal Custom Work</h3>
+                <p>Custom designs are discussed directly with Sarah over WhatsApp, from sketch to final flavor.</p>
+            </div>
+            <div class="value-card">
+                <div class="vi"><i class="fa-solid fa-truck-fast"></i></div>
+                <h3>Careful Delivery</h3>
+                <p>Every cake travels in a padded, insulated box with a tracking code you can follow in real time.</p>
+            </div>
+        </div>
+
+        <div class="stat-strip reveal">
+            <div class="st"><strong>6+</strong><span>Years Baking</span></div>
+            <div class="st"><strong>2,500+</strong><span>Cakes Delivered</span></div>
+            <div class="st"><strong>40+</strong><span>Flavors &amp; Designs</span></div>
+            <div class="st"><strong>4.9<i class="fa-solid fa-star" style="font-size:.6em;margin-left:2px"></i></strong><span>Average Rating</span></div>
+        </div>
+    </div>
+
+    <button id="to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top"
+        aria-label="Back to top"><i class="fa fa-arrow-up"></i></button>
+
+    <div id="cart-veil" onclick="closeCart()"></div>
+    <aside id="cart" aria-label="Shopping bag">
+        <div class="cart-head">
+            <h3>Shopping Bag</h3><button class="icon-btn" aria-label="Close cart" onclick="closeCart()"><i
+                    class="fa fa-xmark"></i></button>
+        </div>
+        <div class="cart-body" id="cart-body"></div>
+        <div class="cart-foot" id="cart-foot" style="display:none">
+            <div class="cart-line"><span>Subtotal</span><span id="cf-sub">৳0</span></div>
+            <div class="cart-line"><span>Delivery</span><span id="cf-del">Calculated at checkout</span></div>
+            <div class="cart-line big"><span>Total</span><span id="cf-tot">৳0</span></div>
+            <button class="btn-checkout" onclick="window.location.href='index.html#shop'"><i class="fa fa-lock"></i> Go to Checkout</button>
+        </div>
+    </aside>
+
+    <div id="track-veil" onclick="onTrackVeilClick(event)">
+        <div id="track-box" role="dialog" aria-modal="true" aria-label="Track your order">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
+                <h2 class="track-title">Track Your Order <i class="fa-solid fa-truck-fast"
+                        style="color: var(--rose);"></i></h2>
+                <button class="icon-btn" aria-label="Close" onclick="closeTrack()"><i class="fa fa-xmark"></i></button>
+            </div>
+            <p class="track-sub">Enter your Order ID (e.g. #ORD-...) or Tracking Code (e.g. SRB-...)</p>
+            <div class="track-input-row">
+                <input type="text" id="track-inp" aria-label="Order ID or tracking code"
+                    placeholder="SRB-260319-1234 or #ORD-..." onkeydown="if(event.key==='Enter')doTrack()" />
+                <button class="btn-search" id="btn-search" onclick="doTrack()"><i class="fa fa-magnifying-glass"></i>
+                    Search</button>
+            </div>
+            <p class="track-err" id="track-err" role="alert"></p>
+            <div class="track-result" id="track-result">
+                <div class="status-bar">
+                    <div class="sl">Current Status</div>
+                    <div class="status-chip" id="tr-status-chip"></div>
+                </div>
+                <div class="steps" id="tr-steps">
+                    <div class="step" id="step-processing">
+                        <div class="step-dot"><i class="fa fa-clock"></i></div>
+                        <div class="step-lbl">Processing</div>
+                    </div>
+                    <div class="step" id="step-confirmed">
+                        <div class="step-dot"><i class="fa fa-check"></i></div>
+                        <div class="step-lbl">Confirmed</div>
+                    </div>
+                    <div class="step" id="step-packed">
+                        <div class="step-dot"><i class="fa fa-box"></i></div>
+                        <div class="step-lbl">Packed</div>
+                    </div>
+                    <div class="step" id="step-shipped">
+                        <div class="step-dot"><i class="fa fa-truck"></i></div>
+                        <div class="step-lbl">Shipped</div>
+                    </div>
+                    <div class="step" id="step-outfordelivery">
+                        <div class="step-dot"><i class="fa fa-motorcycle"></i></div>
+                        <div class="step-lbl">Out for Delivery</div>
+                    </div>
+                    <div class="step" id="step-delivered">
+                        <div class="step-dot"><i class="fa fa-house"></i></div>
+                        <div class="step-lbl">Delivered</div>
+                    </div>
+                </div>
+                <div class="tr-grid">
+                    <div class="tr-box">
+                        <div class="tbl">Order Info</div>
+                        <p id="tr-order-info"></p>
+                    </div>
+                    <div class="tr-box">
+                        <div class="tbl">Delivery Info</div>
+                        <p id="tr-delivery-info"></p>
+                    </div>
+                </div>
+                <div class="tr-items">
+                    <div class="tbl">Items Ordered</div>
+                    <div id="tr-items-list"></div>
+                </div>
+                <div class="tr-totals">
+                    <div class="line"><span>Subtotal</span><span id="tr-sub"></span></div>
+                    <div class="line"><span>Delivery</span><span id="tr-del"></span></div>
+                    <div class="grand"><span>Total</span><span id="tr-tot"></span></div>
+                </div>
+            </div>
+            <button class="btn-close-track" onclick="closeTrack()">Close</button>
+        </div>
+    </div>
+
+    <div id="toast" role="status" aria-live="polite"><i class="fa fa-check-circle" id="toast-ic"></i><span
+            id="toast-msg"></span></div>
+
+    <footer class="site-footer">
+        <div class="footer-glow"></div>
+        <div class="footer-main">
+            <div class="footer-grid">
+                <div class="reveal">
+                    <div class="footer-brand-name"> <span class="brand-logo-text">Sarah's</span> BAKERY</div>
+                    <p class="footer-about">Your trusted destination for delicious, homemade cakes in Bangladesh. We create fresh, high-quality cakes with love, perfect for birthdays, celebrations, and every special moment.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.facebook.com/people/Shalik-Beauty/61553616282600/" target="_blank"
+                            rel="noopener" aria-label="Facebook" class="footer-social-link"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/shalikbeauty007" target="_blank" rel="noopener"
+                            aria-label="Instagram" class="footer-social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/qr/K32S62PEL6ZAK1" target="_blank" rel="noopener" aria-label="WhatsApp"
+                            id="wa-footer" class="footer-social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <div class="footer-col-title">Quick Links</div>
+                    <ul class="footer-links">
+                        <li><a href="index.html#shop">All Products</a></li>
+                        <li><a href="#" onclick="openTrack(); return false;">Track Order</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="reveal">
+                    <div class="footer-col-title">Categories</div>
+                    <ul class="footer-links">
+                        <li><a href="index.html#shop">Birthday Cakes</a></li>
+                        <li><a href="index.html#shop">Cheesecakes</a></li>
+                        <li><a href="index.html#shop">Cupcakes</a></li>
+                        <li><a href="index.html#shop">Custom Cakes</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="reveal">
+                    <div class="footer-col-title">Contact</div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-location-dot"></i>
+                        <p>Dhaka, Bangladesh</p>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+880 1521-124546">+880 1521-124546</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:hello@sarabakery.com">hello@sarabakery.com</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-clock"></i>
+                        <p>Sat–Thu: 10AM – 10PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-copy">© 2026 <strong>Sarah's Bakery</strong> All rights reserved.</div>
+            <div class="footer-payments">
+                <div class="footer-pay-icon"><i class="fas fa-money-bill-wave"></i></div>
+                <div class="footer-pay-icon" style="font-size:11px;font-weight:800;color:#E2136E;">bKash</div>
+                <div class="footer-pay-icon" style="font-size:10px;font-weight:800;color:#F6921E;">Nagad</div>
+                <div class="footer-pay-icon" style="font-size:9px;font-weight:800;color:#8B2F89;">Rocket</div>
+            </div>
+        </div>
+        <div class="footer-credit">
+            <span>
+                Developed by
+                <a href="https://wa.me/8801764640824" target="_blank" rel="noopener noreferrer">
+                    <strong>mhshan7</strong>
+                </a>
+            </span>
+        </div>
+    </footer>
+
+    <script src="assets/site.js"></script>
+</body>
+
+</html>
