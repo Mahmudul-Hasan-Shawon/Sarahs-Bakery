@@ -4461,7 +4461,8 @@ a:focus-visible,
     gap: 8px;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 36px
+    margin-top: 36px;
+    margin-bottom: 36px;
 }
 
 .gallery-grid {
